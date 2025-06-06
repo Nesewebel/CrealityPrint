@@ -108,3 +108,9 @@ jobs:
       #   shell: cmd
       #   run: '"C:/Program Files/7-Zip/7z.exe" a -m0=lzma2 -mx9 Debug_PDB_${{ env.ver }}_for_developers_only.7z  *.pdb'
 
+      - name: Upload CrealityPrint Artifact
+        if: inputs.os == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: crealityprint-windows
+          path: build/OrcaSlicer/
